@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     "Stripe",
     "Next.js",
   ],
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
