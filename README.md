@@ -12,9 +12,15 @@
   [![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)](https://bun.sh/)
 
   [![Clerk](https://img.shields.io/badge/Clerk-Authentication-6C47FF?style=for-the-badge&logo=clerk)](https://clerk.com/)
+  [![Hono](https://img.shields.io/badge/Hono-API-E36002?style=for-the-badge&logo=hono)](https://hono.dev/)
   [![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-v0.45-C5F74F?style=for-the-badge&logo=drizzle)](https://orm.drizzle.team/)
   [![Neon](https://img.shields.io/badge/Neon-Database-00E599?style=for-the-badge&logo=neon&logoColor=black)](https://neon.tech/)
-  [![Hono](https://img.shields.io/badge/Hono-API-E36002?style=for-the-badge&logo=hono)](https://hono.dev/)
+
+  [![Zod](https://img.shields.io/badge/Zod-%233068b7.svg?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
+  [![TanStack Query](https://img.shields.io/badge/-TanStack_Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)](https://tanstack.com/query)
+  [![TanStack Table](https://img.shields.io/badge/-TanStack_Table-000000?style=for-the-badge&logo=react-table&logoColor=white)](https://tanstack.com/table)
+  [![Radix UI](https://img.shields.io/badge/-Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white)](https://www.radix-ui.com/)
+  [![Zustand](https://img.shields.io/badge/-Zustand-443e38?style=for-the-badge&logo=zustand&logoColor=white)](https://zustand-demo.pmnd.rs/)
 </div>
 
 ---
@@ -37,23 +43,23 @@ Built with the latest **Next.js 16 App Router** and **React 19**, it leverages *
 
 ## 🛠️ Tech Stack
 
-### Frontend
+### Frontend Ecosystem
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 - **Library**: [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Components**: [Shadcn/ui](https://ui.shadcn.com/)
-- **State Management**: [TanStack Query v5](https://tanstack.com/query/latest)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) & [TanStack Query v5](https://tanstack.com/query)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **UI Components**: [Shadcn/ui](https://ui.shadcn.com/) powered by [Radix UI](https://www.radix-ui.com/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Utils**: `date-fns`, `clsx`, `tailwind-merge`
 
-### Backend & Database
+### Backend & Infrastructure
 - **API Engine**: [Hono](https://hono.dev/)
-- **Database**: [PostgreSQL (Neon)](https://neon.tech/)
+- **Database**: [PostgreSQL (Neon Serverless)](https://neon.tech/)
 - **ORM**: [Drizzle ORM](https://orm.drizzle.team/)
 - **Auth**: [Clerk v7](https://clerk.com/)
-
-### Tooling
-- **Package Manager**: [Bun](https://bun.sh/)
-- **Validation**: [Zod](https://zod.dev/)
-- **Date Handling**: [date-fns](https://date-fns.org/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ## 🚀 Getting Started
 
@@ -88,16 +94,14 @@ bunx drizzle-kit push
 bun dev
 ```
 
-Visit `http://localhost:3000` to see your dashboard in action!
+## 📦 Project Structure
 
-## 📦 Deployment
-
-The easiest way to deploy is via [Vercel](https://vercel.com/):
-
-1. Push your code to GitHub.
-2. Connect your repository to Vercel.
-3. Configure the environment variables.
-4. Deploy!
+- `app/` — Next.js App Router pages and API routes.
+- `features/` — Encapsulated domain logic (Accounts, Categories, Transactions).
+- `db/` — Drizzle schema and database configuration.
+- `components/` — Shared UI components and layout.
+- `providers/` — React Context providers (Query, UI, Auth).
+- `hooks/` — Global re-usable hooks.
 
 ## 📄 License
 Distributed under the MIT License. See `LICENSE` for more information.
