@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Loader2, Plus } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,7 @@ const INITIAL_IMPORT_RESULTS = {
   meta: {},
 };
 
-const TransactionPage = () => {
+const TransactionPageContent = () => {
   const [AccountDialog, confirm] = useSelectAccount();
   const [variant, setVariant] = useState<VARIANTS>(VARIANTS.LIST);
   const [importResults, setImportResults] = useState(INITIAL_IMPORT_RESULTS);
@@ -137,4 +138,13 @@ const TransactionPage = () => {
     </div>
   );
 };
+
+const TransactionPage = () => {
+  return (
+    <Suspense>
+      <TransactionPageContent />
+    </Suspense>
+  )
+}
+
 export default TransactionPage;

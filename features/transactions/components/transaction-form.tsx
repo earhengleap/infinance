@@ -19,7 +19,7 @@ import { AmountInput } from "@/components/amount-input";
 import { convertAmountToMilliunits } from "@/lib/utils";
 
 const formSchema = z.object({
-  date: z.coerce.date(),
+  date: z.date(),
   accountId: z.string(),
   categoryId: z.string().nullable().optional(),
   payee: z.string(),
@@ -31,8 +31,8 @@ const apiSchema = insertTransactionSchema.omit({
   id: true,
 });
 
-type FormValues = z.input<typeof formSchema>;
-type ApiFormValues = z.input<typeof apiSchema>;
+type FormValues = z.infer<typeof formSchema>;
+type ApiFormValues = z.infer<typeof apiSchema>;
 
 type Props = {
   id?: string;

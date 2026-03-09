@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Loader2, Plus } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
@@ -10,7 +11,7 @@ import { DataTable } from "@/components/data-table";
 import { columns } from "./columns";
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 
-const AccountsPage = () => {
+const AccountsPageContent = () => {
   const newAccount = useNewAccount();
   const deleteAccounts = useBulkDeleteAccounts();
   const accountsQuery = useGetAccounts();
@@ -61,4 +62,13 @@ const AccountsPage = () => {
     </div>
   );
 };
+
+const AccountsPage = () => {
+  return (
+    <Suspense>
+      <AccountsPageContent />
+    </Suspense>
+  )
+}
+
 export default AccountsPage;

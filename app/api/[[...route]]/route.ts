@@ -1,11 +1,12 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import accounts  from './accounts';
+import accounts from './accounts';
 import categories from './categories';
 import transactions from './transactions';
 import summary from './summary';
 
 export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 
 const app = new Hono().basePath('/api')
 

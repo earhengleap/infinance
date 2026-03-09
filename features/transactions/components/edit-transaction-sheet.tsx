@@ -27,7 +27,7 @@ const formSchema = insertTransactionSchema.omit({
   id: true,
 });
 
-type FormValues = z.input<typeof formSchema>;
+type FormValues = z.infer<typeof formSchema>;
 
 export const EditTransactionSheet = () => {
   const { isOpen, onClose, id } = useOpenTransaction();
@@ -88,23 +88,23 @@ export const EditTransactionSheet = () => {
 
   const defaultValues = transactionQuery.data
     ? {
-        accountId: transactionQuery.data.accountId,
-        categoryId: transactionQuery.data.categoryId,
-        amount: transactionQuery.data.amount.toString(),
-        date: transactionQuery.data.date
-          ? new Date(transactionQuery.data.date)
-          : new Date(),
-        payee: transactionQuery.data.payee,
-        notes: transactionQuery.data.notes,
-      }
+      accountId: transactionQuery.data.accountId,
+      categoryId: transactionQuery.data.categoryId,
+      amount: transactionQuery.data.amount.toString(),
+      date: transactionQuery.data.date
+        ? new Date(transactionQuery.data.date)
+        : new Date(),
+      payee: transactionQuery.data.payee,
+      notes: transactionQuery.data.notes,
+    }
     : {
-        accountId: "",
-        categoryId: "",
-        amount: "",
-        date: new Date(),
-        payee: "",
-        notes: "",
-      };
+      accountId: "",
+      categoryId: "",
+      amount: "",
+      date: new Date(),
+      payee: "",
+      notes: "",
+    };
 
   const onDelete = async () => {
     const ok = await confirm();

@@ -16,7 +16,7 @@ export const useSelectAccount = (): [
   () => JSX.Element,
   () => Promise<unknown>
 ] => {
-  const selectValue = useRef<string>();
+  const selectValue = useRef<string | undefined>(undefined);
   const accountQuery = useGetAccounts();
   const accountMutation = useCreateAccount();
   const onCreateAccount = (name: string) =>
@@ -45,7 +45,7 @@ export const useSelectAccount = (): [
   const handleConfirm = () => {
     promise?.resolve(selectValue.current);
     handleClose();
-    console.log({handleConfirm})
+    console.log({ handleConfirm })
   };
 
   const handleCancel = () => {
@@ -74,7 +74,7 @@ export const useSelectAccount = (): [
             Cancel
           </Button>
           <Button onClick={handleConfirm}>Confirm</Button>
-          
+
         </DialogFooter>
       </DialogContent>
     </Dialog>
