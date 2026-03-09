@@ -1,87 +1,106 @@
-# InFinance - Modern Financial Dashboard
+<div align="center">
+  <img src="./public/logo.svg" alt="InFinance Logo" width="200" />
+  
+  # InFinance
 
-InFinance is a high-performance, professional financial management platform designed to help users track transactions, manage accounts, and visualize financial health with clarity and ease.
+  ### A Premium Financial Management Dashboard
+  
+  [![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)](https://bun.sh/)
 
-Built with a state-of-the-art tech stack, InFinance offers a seamless, responsive experience with real-time data visualization and secure authentication.
+  [![Clerk](https://img.shields.io/badge/Clerk-Authentication-6C47FF?style=for-the-badge&logo=clerk)](https://clerk.com/)
+  [![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-v0.45-C5F74F?style=for-the-badge&logo=drizzle)](https://orm.drizzle.team/)
+  [![Neon](https://img.shields.io/badge/Neon-Database-00E599?style=for-the-badge&logo=neon&logoColor=black)](https://neon.tech/)
+  [![Hono](https://img.shields.io/badge/Hono-API-E36002?style=for-the-badge&logo=hono)](https://hono.dev/)
+</div>
 
-## 🚀 Technical Excellence
+---
 
-This project has been recently upgraded to the latest industry standards:
+## 🌟 Overview
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router) for superior performance and developer experience.
-- **UI Library**: [React 19](https://react.dev/) utilizing the latest concurrent features.
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) with a modern CSS-first architecture.
-- **Backend API**: [Hono](https://hono.dev/) for ultra-lightweight and fast edge-ready routes.
-- **Database ORM**: [Drizzle ORM](https://orm.drizzle.team/) with [Neon](https://neon.tech/) (Serverless PostgreSQL).
-- **Authentication**: [Clerk v7](https://clerk.com/) for secure, scalable user management.
-- **Data Fetching**: [TanStack Query v5](https://tanstack.com/query/latest) for robust server state management.
-- **Components**: [Shadcn/ui](https://ui.shadcn.com/) for beautiful, accessible UI components.
+**InFinance** is a high-performance, professional financial management platform designed to help users track transactions, manage accounts, and visualize financial health with clarity and ease. 
+
+Built with the latest **Next.js 16 App Router** and **React 19**, it leverages **Tailwind CSS v4** for a cutting-edge UI/UX and **Hono** for blazing-fast edge API routes.
 
 ## ✨ Core Features
 
-- **Intuitive Dashboard**: At-a-glance summary of income, expenses, and remaining balance.
-- **Financial Visualization**: Interactive charts (Area, Bar, Line, Pie) for analyzing spending patterns.
-- **Account Management**: Seamlessly create and manage multiple financial accounts.
-- **Transaction Tracking**: Detailed transaction history with category tagging and notes.
-- **CSV Data Import**: Bulk upload transactions via CSV for easy migration.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **Theme Support**: Premium look and feel with Tailwind CSS v4's dynamic spacing and color system.
+- 📊 **Dynamic Dashboard** — Real-time summary of income, expenses, and current balance.
+- 📈 **Data Visualization** — Interactive Area, Bar, Line, and Pie charts for spending analysis.
+- 💳 **Account Management** — Manage multiple bank accounts and credit cards in one place.
+- 🏷️ **Categorization** — Tag transactions with custom categories for better tracking.
+- 📂 **CSV Import** — Seamlessly bulk-upload transaction history.
+- 🔐 **Secure Auth** — Enterprise-grade authentication powered by Clerk v7.
+- 📱 **Mobile First** — Fully responsive design that feels native on any device.
 
-## 🛠️ Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
+### Frontend
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Components**: [Shadcn/ui](https://ui.shadcn.com/)
+- **State Management**: [TanStack Query v5](https://tanstack.com/query/latest)
 
-- [Bun](https://bun.sh/) (Recommended runtime)
-- Node.js (v20 or higher)
+### Backend & Database
+- **API Engine**: [Hono](https://hono.dev/)
+- **Database**: [PostgreSQL (Neon)](https://neon.tech/)
+- **ORM**: [Drizzle ORM](https://orm.drizzle.team/)
+- **Auth**: [Clerk v7](https://clerk.com/)
 
-### Setup
+### Tooling
+- **Package Manager**: [Bun](https://bun.sh/)
+- **Validation**: [Zod](https://zod.dev/)
+- **Date Handling**: [date-fns](https://date-fns.org/)
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/earhengleap/infinance.git
-   cd infinance
-   ```
+## 🚀 Getting Started
 
-2. **Install dependencies:**
-   ```bash
-   bun install
-   ```
+### 1. Prerequisites
+- [Bun](https://bun.sh/) installed on your machine.
+- A [Clerk](https://clerk.com/) account for authentication.
+- A [Neon](https://neon.tech/) database instance.
 
-3. **Configure Environment Variables:**
-   Create a `.env.local` file in the root directory and add the following:
-   ```env
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_key
-   CLERK_SECRET_KEY=your_key
-   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-   DATABASE_URL=your_postgres_url
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   ```
+### 2. Installation
+```bash
+git clone https://github.com/earhengleap/infinance.git
+cd infinance
+bun install
+```
 
-4. **Initialize the Database:**
-   ```bash
-   bunx drizzle-kit push
-   ```
+### 3. Environment Setup
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=...
+CLERK_SECRET_KEY=...
+DATABASE_URL=...
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-5. **Run the development server:**
-   ```bash
-   bun dev
-   ```
+### 4. Database Initialization
+```bash
+bunx drizzle-kit push
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Launch
+```bash
+bun dev
+```
 
-## 📦 Project Structure
+Visit `http://localhost:3000` to see your dashboard in action!
 
-- `app/`: Next.js App Router pages and API routes.
-- `components/`: Shared UI components and layout elements.
-- `features/`: Specific domain logic (Accounts, Categories, Transactions, Summary) including state hooks and API clients.
-- `db/`: Database schema and drizzle configuration.
-- `providers/`: Context providers for Query, Sheets, and Authentication.
-- `hooks/`: Custom React hooks for global utilities.
+## 📦 Deployment
+
+The easiest way to deploy is via [Vercel](https://vercel.com/):
+
+1. Push your code to GitHub.
+2. Connect your repository to Vercel.
+3. Configure the environment variables.
+4. Deploy!
 
 ## 📄 License
-
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-Built with ❤️ by [Ear Hengleap](https://github.com/earhengleap)
+Developed by **[Ear Hengleap](https://github.com/earhengleap)**
